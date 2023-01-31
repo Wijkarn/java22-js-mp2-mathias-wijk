@@ -71,12 +71,12 @@ img.rock {
 #player,
 #pc {
     border: solid black 2px;
-    border-radius: 10%;
+    border-radius: 50px;
 }
 
 #playerArea div,
 #pcArea div {
-    border-radius: 33%;
+    border-radius: 50px;
     border: solid black 2px;
     user-select: none;
 }

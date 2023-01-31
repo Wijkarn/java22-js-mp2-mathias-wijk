@@ -2,6 +2,7 @@
 
 const playerArea = document.querySelector("#playerArea");
 const formButton = document.querySelector("button");
+const gameScore = document.querySelector("#gameScore");
 let playerName;
 const theChosenOne = "red solid 2px";
 const notTheChosenOne = "black solid 2px";
@@ -42,7 +43,7 @@ playerArea.addEventListener("click", event => {
     if (pcWins < 3 && playerWins < 3) {
         // Round Tie
         if (playerChoice == pcChoice) {
-            scoreList("Tie");    // not sure if keep or not
+            scoreList("Tie");
         }
         // Round Player Win
         else if ((playerChoice == "Rock" && pcChoice == "Scissors") || (playerChoice == "Scissors" && pcChoice == "Paper") || (playerChoice == "Paper" && pcChoice == "Rock")) {
@@ -55,6 +56,11 @@ playerArea.addEventListener("click", event => {
             pcWins++;
         }
     }
+    else{
+        gameScore.innerText = "";
+    }
+
+    gameScore.innerText = `${playerName}: ${playerWins}. Computer: ${pcWins}.`;
 
     // pc wins the game
     if (pcWins == 3) {
